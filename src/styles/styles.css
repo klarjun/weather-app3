@@ -21,7 +21,7 @@ body, html{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url("../images/56518.jpeg");
+	background-image: url("../images/bg.jpeg");
 	filter: blur(10px);
 }
 
@@ -200,7 +200,6 @@ body, html{
 	color: #fff;
 	margin: 50px 0;
 }
-
 
 .sub-widget-2 .center{
 	position: absolute;

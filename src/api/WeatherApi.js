@@ -21,16 +21,18 @@ const WeatherApi = () => {
 
     }, []);
 
-    
-    var searchWeather = (word) => {
+    //Calling api after 
+    var searchWeather = (city) => {
+
         axios
-        .get(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${word}&days=10&aqi=no&alerts=no`)
+        .get(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`)
         .then((data) => {
             console.log("success");
             setWeather(data.data);
         }).catch(() => {
             console.log("Please Check the input parameters")
         })
+
     }
 
     return(
@@ -38,7 +40,7 @@ const WeatherApi = () => {
             <div className="bg">
 
                 {/* Passing Props to the Children Components */}
-                {weather && <CurrentWeather weatherData = {weather} searchWeather = {word => searchWeather(word)}/>}
+                {weather && <CurrentWeather weatherData = {weather} searchWeather = {city => searchWeather(city)}/>}
                 {weather && <WeatherForecast weatherData = {weather}/>}
 
             </div>
